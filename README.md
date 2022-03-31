@@ -1,1 +1,1 @@
-# SCALP
+# SCALP (SSR caller pipeline)
