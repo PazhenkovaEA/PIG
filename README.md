@@ -1,1 +1,1 @@
-# SCALP (SSR caller pipeline)
+# SCALP (SSR genotype caller pipeline)
