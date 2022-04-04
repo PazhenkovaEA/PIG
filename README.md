@@ -1,10 +1,17 @@
 # PIG (PIpeline for microsatellite Genotyping)
 
+## Experiment design
+
+Samples are grouped to **batches**, which correspond to 96-well (number of wells can vary) sample plates. Each position on plate (=each sample) is marked by unique combination of tags (short oligoes, connected to primers). It allows us to sequence multiple samples during one run. 
+The pipeline is developed to analize data from multiplex PCR, when all loci of interest are proceeded in a single reaction. 
+After sequencing, we need to demultiplex all the samples and loci and then to perform allele calling.
+The main demultiplexing steps are based on OBITools3: https://git.metabarcoding.org/obitools/obitools3/blob/master/README.md
+
 ## Input files
 
 ### 1. Sequences
 
-Reads in fastq format.
+Illumina paired-end reads in .fastq format.
 
 ### 2. Samples
 
