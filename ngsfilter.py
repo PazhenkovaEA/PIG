@@ -1,20 +1,20 @@
 import pandas as pd
-import os
+import os, sys
 from itertools import repeat
 import json
 import argparse
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Create .ngsfilter for STR NGS data analysis. Please, provide a path to configuration file in .json format.')
-    parser.add_argument('-config', '--config_file', help='Path to configuraion file', metavar='Str', default='ALL')
+    parser = argparse.ArgumentParser(description='Create .ngsfilter for SSR NGS data analysis "PIG" pipeline. Please, provide a path to configuration file in .json format.')
+    parser.add_argument('-config', '--config_file', help='Path to configuration file', type=open, metavar='json_file', default=None, required=True)
     args = parser.parse_args()
     config_file = args.config_file
 
-    with open(config_file, 'r') as f:
+    with config_file as f:
       params = json.load(f)
 
     project = params["Output_path"]
     if not os.path.exists(project):
-        print("Incorrect project folder. Please, check your path!")
+        print("Project folder does not exists. Please, check your path!")
         exit()
     output_path = f"{project}/ngsfilters/"
     if not os.path.exists(output_path):
