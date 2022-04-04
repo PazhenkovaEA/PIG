@@ -55,7 +55,7 @@ If you have the only one primer plate, call the column PP1.
 
 Example:
 
-position| PP1 | PP2
+Position| PP1 | PP2
 --- | --- | ---
 A1|  acacacac:acacacac |caggctaa:tgagccta
 B1|  acacacac:acagcaca |caggctaa:tgagcctt
