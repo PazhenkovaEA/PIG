@@ -50,6 +50,7 @@ ZF|  cataacgctcc |taacgctcccataac | snp | | agag........tatac |
 
 Tab-sepatated text file.
 If you have the only one primer plate, call the column PP1. 
+
 **Important**. Make sure, that positions names in this file match to positions in the Sample description file. 
 
 Example:
