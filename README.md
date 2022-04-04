@@ -1,6 +1,10 @@
-# SCALP (SSR genotype calling pipeline)
+# PIG (PIpeline for microsatellite Genotyping)
 
 ## Input files
+
+### Sequences
+
+Reads in fastq format.
 
 ### Samples
 
@@ -28,3 +32,40 @@ Enumerated by capital letters (rows) and numbers (columns). Typically, 96-well p
   - ExtNeg (no sample in extraction)
 
 ### Primers
+
+Tab-sepatated text file.
+Type: microsat or snp.
+In case if the marker is biallelic or microsatellite contains different motifs, you need to provide all sequences or motifs with the same locus name.
+Sequence (in the "sequence" column) should be provided without primers.
+
+Example:
+
+locus | primerF | primerR | type | motif |sequence
+--- | --- | --- | --- | --- | ---
+UA_03|  gctcccataac |gctcccataac | microsat | acac |
+ZF|  cataacgctcc |taacgctcccataac | snp | | agag........tatac |
+
+
+### Tag combination file
+
+Tab-sepatated text file.
+If you have the only one primer plate, call the column PP1. 
+**Important**. Make sure, that positions names in this file match to positions in the Sample description file. 
+
+Example:
+
+position| PP1 | PP2
+--- | --- | ---
+A1|  acacacac:acacacac |caggctaa:tgagccta
+B1|  acacacac:acagcaca |caggctaa:tgagcctt
+..|  ...|...
+H12|  gactgatg:gatcgcga |gaggacta:tcagtcga
+
+### Configuration file
+
+Text file in .json format. 
+
+
+
+
+
