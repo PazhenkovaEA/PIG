@@ -1,0 +1,27 @@
+{
+    "Library": "ursus_DEMO",
+    "Batches": [
+        {
+            "Primers": "./DEMO/ursus_primers_DEMO.txt",
+            "Samples": "./DEMO/ursus_samples_DEMO.txt",
+            "Tag_plates": [
+                "PP1",
+                "PP2",
+		"PP3",
+		"PP4",
+		"PP5",
+		"PP6",
+                "PP7",
+                "PP8"
+            ],
+            "Tags": "./DEMO/tags_8plates_DEMO.txt"
+        }
+    ],
+    "Reads": [
+        [
+            "./DEMO/ursus_FORWARD_DEMO.fastq.gz",
+            "./DEMO/ursus_REVERSE_DEMO.fastq.gz"
+        ]
+    ],
+   "Output_path": "./RESULT/ngs_pipelines_dev"
+}
