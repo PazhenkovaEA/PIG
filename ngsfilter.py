@@ -63,6 +63,7 @@ if __name__ == "__main__":
     print(f"{name}.ngsfilter created in {output_path}.")
     with open(f"{project}/read_names.txt", 'w') as f:
         f.write('\t'.join([str(x) for x in [i[0] for i in params["Reads"]]]) + "\n")
-        f.write('\t'.join([str(x) for x in [i[1] for i in params["Reads"]]]))
+        f.write('\t'.join([str(x) for x in [i[1] for i in params["Reads"]]]) + "\n")
+        f.write(lib["Primers"])
         f.close()
 
