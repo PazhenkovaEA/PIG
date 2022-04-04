@@ -56,7 +56,7 @@ ZF|  cataacgctcc |taacgctcccataac | snp | | agag........tatac |
 ### 4. Tag combination file
 
 Tab-sepatated text file.
-If you have the only one primer plate, call the column PP1. 
+If you have the only one primer plate, call the column PP1 (primer plate 1). 
 
 **Important**. Make sure, that positions names in this file match to positions in the Sample description file. 
 
@@ -72,6 +72,18 @@ H12|  gactgatg:gatcgcga |gaggacta:tcagtcga
 ### 5. Configuration file
 
 Text file in .json format. 
+"Library"
+
+"Batches":
+  * Primers: path to the primer file
+  * Name: batch name
+  * Samples: path to the sample file
+  * Tag_plates: \["PP1", "PP2"] (list of tag combinations, used for the batch). 
+  * Tags: path to the tag combination file
+
+"Reads": path to the reads in fastq 
+"Output_path": path to the output folder
+
 
 
 
