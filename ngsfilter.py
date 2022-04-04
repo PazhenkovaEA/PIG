@@ -51,7 +51,7 @@ if __name__ == "__main__":
                                               primers.iloc[:, 1], primers.iloc[:, 2], repeat("F"),
                                               repeat("@")))), axis=1)
 
-        ngsfilters.append(pd.concat(intermediate.tolist()))
+        ngsfilters.append(pd.concat(intermediate.values.tolist()))
 
     ngsfilter = pd.concat(ngsfilters)
     ngsfilter[1] = ngsfilter[[1, 2, 3]].apply(lambda row: '__'.join(row.values.astype(str)),
