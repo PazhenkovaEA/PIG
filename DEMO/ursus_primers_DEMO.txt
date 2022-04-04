@@ -1,0 +1,3 @@
+locus	primerF	primerR	type	motif	sequence
+UA146	ggtactggcagctaagcta	atcccaggactgcttgctt	microsat	AAAG
+UA122	atccaggtgtttccctgag	gtagctgcattctaacccc	microsat	AAAG
