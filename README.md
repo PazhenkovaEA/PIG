@@ -2,11 +2,11 @@
 
 ## Input files
 
-### Sequences
+### 1. Sequences
 
 Reads in fastq format.
 
-### Samples
+### 2. Samples
 
 Tab-sepatated text file.
 
@@ -31,7 +31,7 @@ Enumerated by capital letters (rows) and numbers (columns). Typically, 96-well p
   - PCRNeg (no template in PCR)
   - ExtNeg (no sample in extraction)
 
-### Primers
+### 3. Primers
 
 Tab-sepatated text file.
 Type: microsat or snp.
@@ -46,7 +46,7 @@ UA_03|  gctcccataac |gctcccataac | microsat | acac |
 ZF|  cataacgctcc |taacgctcccataac | snp | | agag........tatac |
 
 
-### Tag combination file
+### 4. Tag combination file
 
 Tab-sepatated text file.
 If you have the only one primer plate, call the column PP1. 
@@ -62,7 +62,7 @@ B1|  acacacac:acagcaca |caggctaa:tgagcctt
 ..|  ...|...
 H12|  gactgatg:gatcgcga |gaggacta:tcagtcga
 
-### Configuration file
+### 5. Configuration file
 
 Text file in .json format. 
 
