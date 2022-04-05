@@ -1,20 +1,20 @@
 import pandas as pd
-import os, sys
+import os
 from itertools import repeat
 import json
 import argparse
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Create .ngsfilter for SSR NGS data analysis "PIG" pipeline. Please, provide a path to configuration file in .json format.')
-    parser.add_argument('-config', '--config_file', help='Path to configuration file', type=open, metavar='json_file', default=None, required=True)
+    parser = argparse.ArgumentParser(description='Create .ngsfilter for STR NGS data analysis. Please, provide a path to configuration file in .json format.')
+    parser.add_argument('-config', '--config_file', help='Path to configuraion file', metavar='Str', default='ALL')
     args = parser.parse_args()
     config_file = args.config_file
 
-    with config_file as f:
+    with open(config_file, 'r') as f:
       params = json.load(f)
 
     project = params["Output_path"]
     if not os.path.exists(project):
-        print("Project folder does not exists. Please, check your path!")
+        print("Incorrect project folder. Please, check your path!")
         exit()
     output_path = f"{project}/ngsfilters/"
     if not os.path.exists(output_path):
@@ -44,6 +44,9 @@ if __name__ == "__main__":
         APfile = pd.read_csv(lib["Samples"],  sep="\t")
         APfile = APfile[["Sample","Position"]]
         APfile = APfile.merge(tagcombo, left_on= "Position", right_on="Position")
+        if len(APfile) == 0:
+            print("\"Position\" columns in tag combination and sample files do not match. Please, check your input.")
+            exit()
 
         intermediate = APfile.apply(
             lambda row: pd.DataFrame(list(zip(primers.iloc[:, 0], repeat(row["Sample"]),
@@ -64,6 +67,6 @@ if __name__ == "__main__":
     with open(f"{project}/read_names.txt", 'w') as f:
         f.write('\t'.join([str(x) for x in [i[0] for i in params["Reads"]]]) + "\n")
         f.write('\t'.join([str(x) for x in [i[1] for i in params["Reads"]]]) + "\n")
-        f.write(lib["Primers"])
+        #f.write(lib["Primers"])
         f.close()
 
