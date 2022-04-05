@@ -1,4 +1,4 @@
-Position	Sample	Type
+Sample	Position	Type
 M125E	A1	sample
 NeKo399	B1	PCRNeg
 M027C	C1	sample
